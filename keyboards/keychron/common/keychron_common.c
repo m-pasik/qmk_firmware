@@ -40,7 +40,7 @@ static uint8_t mac_keycode[4] = {
 
 // clang-format off
 static key_combination_t key_comb_list[] = {
-    {2, {KC_LWIN, KC_TAB}},
+    {2, {KC_LWIN, KC_G}},
     {2, {KC_LWIN, KC_E}},
     {3, {KC_LSFT, KC_LCMD, KC_4}},
     {2, {KC_LWIN, KC_C}},
@@ -134,12 +134,11 @@ static void encoder_pad_cb(void *param) {
 void encoder_cb_init(void) {
     pin_t encoders_pad_a[] = ENCODERS_PAD_A;
     pin_t encoders_pad_b[] = ENCODERS_PAD_B;
-    for (uint32_t i=0; i<NUM_ENCODERS; i++)
-    {
+    for (uint32_t i = 0; i < NUM_ENCODERS; i++) {
         palEnableLineEvent(encoders_pad_a[i], PAL_EVENT_MODE_BOTH_EDGES);
         palEnableLineEvent(encoders_pad_b[i], PAL_EVENT_MODE_BOTH_EDGES);
-        palSetLineCallback(encoders_pad_a[i], encoder_pad_cb, (void*)i);
-        palSetLineCallback(encoders_pad_b[i], encoder_pad_cb, (void*)i);
+        palSetLineCallback(encoders_pad_a[i], encoder_pad_cb, (void *)i);
+        palSetLineCallback(encoders_pad_b[i], encoder_pad_cb, (void *)i);
     }
 }
 #endif
@@ -235,4 +234,3 @@ void raw_hid_receive(uint8_t *data, uint8_t length) {
     kc_raw_hid_rx(data, length);
 }
 #endif
-
