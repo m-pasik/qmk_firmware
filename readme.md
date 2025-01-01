@@ -8,7 +8,8 @@
 
 This is a keyboard firmware based on the [tmk\_keyboard firmware](https://github.com/tmk/tmk_keyboard) with some useful features for Atmel AVR and ARM controllers, and more specifically, the [OLKB product line](https://olkb.com), the [ErgoDox EZ](https://ergodox-ez.com) keyboard, and the Clueboard product line.
 
-This is my fork where I'll keep any changes i make to my keyboard's firmware.
+***This is my fork where I'll keep any changes I make to my keyboard's firmware.***
+I added my own animation (will probably play around with it more) and remapped caps and escape in the firmware because some programs don't seem to respect `setxkbmap -option caps:swapescape`.
 
 ## Documentation
 
